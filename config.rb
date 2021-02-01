@@ -4,7 +4,7 @@
 
 # A machine-readable name for your project.
 #  - HCAP DevSecOps is able to derive other default settings from your project's name.
-set :application, "nate-pipe-ng3"
+set :application, "nate-pipe-ng2"
 
 # The project's application type
 set :application_type, :pipeline
@@ -38,13 +38,13 @@ set :app_envs, [:myvpc, :mydb, :myapp]
 
 # Define the HCAP Deploy environment ID for the application sub-project named :myvpc
 #  - HCAP DevSecOps will automatically refer to this variable when deploying the sub-project
-set :myvpc_reandeploy_id, 1
+set :myvpc_reandeploy_id, 4
 # Define the HCAP Deploy environment ID for the application sub-project named :mydb
 #  - HCAP DevSecOps will automatically refer to this variable when deploying the sub-project
-set :mydb_reandeploy_id, 2
+set :mydb_reandeploy_id, 5
 # Define the HCAP Deploy environment ID for the application sub-project named :myapp
 #  - HCAP DevSecOps will automatically refer to this variable when deploying the sub-project
-set :myapp_reandeploy_id, 3
+set :myapp_reandeploy_id, 6
 
 ##############################################################################################
 # INFRASTRUCTURE VALIDATION
@@ -53,7 +53,7 @@ set :myapp_reandeploy_id, 3
 # Opt in to using HCAP Test as the infrastructure validation tool.
 #  - HCAP DevSecOps also supports "per sub-project" validation tool selection,
 #    such as `set :NAME_infra_test_tool, :reantest`.
-set :infra_test_tool, :reantest
+set :infra_test_tool, :none
 
 # NOTE: Because you usually want different infrastructure per environment, the HCAP Test
 # infrastructure test variables are defined in environment specific configuration files:
@@ -66,7 +66,7 @@ set :infra_test_tool, :reantest
 ##############################################################################################
 
 # Specify which server testing tool to use.
-set :server_test_tool, :none
+set :server_test_tool, :inspec
 
 # What servers should be tested by inspec?
 #  - HCAP DevSecOps supports a simple syntax for declaring servers to be tested.
@@ -138,12 +138,12 @@ website :mysite, protocol: :http, host: reandeploy_output('app-myapp.json','ec2_
 #  - HCAP DevSecOps automatically loads Git credentials from the GIT_USER and GIT_PASS environment
 #    variables, unless you specifically provide alternative values.
 set :functional_tests, [
-  {
-    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
-    git_repository_url: "",
-    chrome: "72",
-    firefox: "63"
-  }
+#  {
+#    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
+#    git_repository_url: "",
+#    chrome: "72",
+#    firefox: "63"
+#  }
 ]
 
 # A list of HCAP Test load tests to be run, with a minimal number of options required.
