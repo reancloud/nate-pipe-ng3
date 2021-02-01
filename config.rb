@@ -138,12 +138,12 @@ website :mysite, protocol: :http, host: reandeploy_output('app-myapp.json','ec2_
 #  - HCAP DevSecOps automatically loads Git credentials from the GIT_USER and GIT_PASS environment
 #    variables, unless you specifically provide alternative values.
 set :functional_tests, [
-#  {
-#    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
-#    git_repository_url: "",
-#    chrome: "72",
-#    firefox: "63"
-#  }
+  {
+    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
+    git_repository_url: "",
+    chrome: "72",
+    firefox: "63"
+  }
 ]
 
 # A list of HCAP Test load tests to be run, with a minimal number of options required.
