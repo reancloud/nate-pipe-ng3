@@ -38,13 +38,13 @@ set :app_envs, [:myvpc, :mydb, :myapp]
 
 # Define the HCAP Deploy environment ID for the application sub-project named :myvpc
 #  - HCAP DevSecOps will automatically refer to this variable when deploying the sub-project
-set :myvpc_reandeploy_id, 4
+set :myvpc_reandeploy_id, 1
 # Define the HCAP Deploy environment ID for the application sub-project named :mydb
 #  - HCAP DevSecOps will automatically refer to this variable when deploying the sub-project
-set :mydb_reandeploy_id, 5
+set :mydb_reandeploy_id, 2
 # Define the HCAP Deploy environment ID for the application sub-project named :myapp
 #  - HCAP DevSecOps will automatically refer to this variable when deploying the sub-project
-set :myapp_reandeploy_id, 6
+set :myapp_reandeploy_id, 3
 
 ##############################################################################################
 # INFRASTRUCTURE VALIDATION
